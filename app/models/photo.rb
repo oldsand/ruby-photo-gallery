@@ -8,4 +8,12 @@ class Photo < ActiveRecord::Base
     default_url: "/images/:style/missing.png"
 
   validates_attachment_content_type :attachment, content_type: /\Aimage\/.*\Z/
+
+  def next_record
+    Photo.where('id > ?', id).first
+  end
+
+  def prev_record
+    Photo.where('id < ?', id).last
+  end
 end

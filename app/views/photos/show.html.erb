@@ -1,3 +1,13 @@
 <h1><%= @photo.title %></h1>
 
-<%= image_tag @photo.attachment.url(:large) %>
+<figure>
+  <%= image_tag @photo.attachment.url(:large) %>
+  <figcaption>
+    <%= @photo.title %>
+  </figcaption>
+</figure>
+
+<nav>
+  <%= link_to '← Previous Photo', photo_path(@photo.prev_record) unless @photo.prev_record.nil? %>
+  <%= link_to 'Next Photo →', photo_path(@photo.next_record) unless @photo.next_record.nil? %>
+</nav>

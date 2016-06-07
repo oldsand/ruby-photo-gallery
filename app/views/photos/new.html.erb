@@ -1,0 +1,21 @@
+<h1>Upload new photo</h1>
+
+<%= form_for @photo do |f| %>
+
+  <p>
+    <label>
+      Title
+      <%= f.text_field :title %>
+    </label>
+  </p>
+
+  <p>
+    <label>
+      File
+      <%= f.file_field :attachment %>
+    </label>
+  </p>
+
+  <%= f.submit %>
+
+<% end %>

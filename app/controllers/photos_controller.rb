@@ -1,8 +1,10 @@
 class PhotosController < ApplicationController
   def index
+    @photos = Photo.all.reverse
   end
 
   def show
+    @photo = Photo.find params[:id]
   end
 
   def new
@@ -21,6 +23,6 @@ class PhotosController < ApplicationController
   protected
 
   def photo_params
-    params.require(:photo).permit(:titile, :attachment)
+    params.require(:photo).permit(:title, :attachment)
   end
 end

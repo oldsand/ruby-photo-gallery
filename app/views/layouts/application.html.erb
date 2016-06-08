@@ -9,10 +9,12 @@
 <body>
 
   <header>
-    <%= link_to 'All Photos', root_url %>
+    <%= link_to 'Albums', root_url %>
   </header>
 
-  <%= yield %>
+  <div class="content-view">
+    <%= yield %>
+  </div>
 
 </body>
 </html>

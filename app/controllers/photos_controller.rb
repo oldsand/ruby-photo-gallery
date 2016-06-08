@@ -1,18 +1,16 @@
 class PhotosController < ApplicationController
-  def index
-    @photos = Photo.all.reverse
-  end
 
   def show
     @photo = Photo.find params[:id]
   end
 
   def new
-    @photo = Photo.new
+    @album = Album.find params[:album_id]
+    @photo = @album.photos.new
   end
 
   def create
-    @photo = Photo.new photo_params
+    @photo = @album.photos.new photo_params
     if @photo.save
       redirect_to @photo
     else

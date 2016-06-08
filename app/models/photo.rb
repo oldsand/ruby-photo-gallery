@@ -3,7 +3,7 @@ class Photo < ActiveRecord::Base
   styles: {
     large: "1200x1200",
     medium: "800x800",
-    thumb: "100x100#" # = Crop the image
+    thumb: "300x300#" # = Crop the image
     },
     default_url: "/images/:style/missing.png"
 

@@ -1,13 +1,15 @@
-<h1><%= @photo.title %></h1>
+<div class="photo-view">
+  <h1><%= @photo.title %></h1>
 
-<figure>
-  <%= image_tag @photo.attachment.url(:large) %>
-  <figcaption>
-    <%= @photo.title %>
-  </figcaption>
-</figure>
+  <figure>
+    <%= image_tag @photo.attachment.url(:large) %>
+    <figcaption>
+      <%= @photo.title %>
+    </figcaption>
+  </figure>
 
-<nav>
-  <%= link_to '← Previous Photo', photo_path(@photo.prev_record) unless @photo.prev_record.nil? %>
-  <%= link_to 'Next Photo →', photo_path(@photo.next_record) unless @photo.next_record.nil? %>
-</nav>
+  <nav>
+    <%= link_to '← Previous Photo', photo_path(@photo.prev_record) unless @photo.prev_record.nil? %>
+    <%= link_to 'Next Photo →', photo_path(@photo.next_record) unless @photo.next_record.nil? %>
+  </nav>
+</div>

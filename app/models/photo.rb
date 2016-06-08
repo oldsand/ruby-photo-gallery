@@ -1,4 +1,6 @@
 class Photo < ActiveRecord::Base
+  belongs_to :ablum
+
   has_attached_file :attachment,
   styles: {
     large: "1200x1200",

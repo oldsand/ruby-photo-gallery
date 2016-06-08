@@ -4,7 +4,7 @@
   <%= link_to "New Photo", new_photo_path, class: 'button' %>
 
   <ul class='photos-list'>
-    <%= @photos.each do |photo| %>
+    <% @photos.each do |photo| %>
       <li>
         <%= link_to photo, title:photo.title do %>
           <%= image_tag photo.attachment.url(:thumb) %>

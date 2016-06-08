@@ -1,0 +1,22 @@
+html, body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.content-view {
+  padding: 1em;
+}
+
+.button {
+  padding: 0.5em;
+  border: 2px solid RED;
+  display: inline-block;
+  border-radius: 3px;
+  text-decoration: none;
+  margin: 1em 0;
+  color: RED;
+
+  &:hover {
+    background: RED;
+    color: #efefef;
+  }
+}

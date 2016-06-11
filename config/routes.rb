@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     resources :photos
   end
 
+  resources :photos, only: :show 
+
   root 'albums#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -10,6 +10,7 @@ class PhotosController < ApplicationController
   end
 
   def create
+    @album = Album.find params[:album_id]
     @photo = @album.photos.new photo_params
     if @photo.save
       redirect_to @photo

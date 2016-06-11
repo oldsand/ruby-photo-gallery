@@ -2,6 +2,8 @@ class PhotosController < ApplicationController
 
   def show
     @photo = Photo.find params[:id]
+
+    render layout: "photo-view"
   end
 
   def new

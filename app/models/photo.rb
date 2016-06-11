@@ -1,5 +1,5 @@
 class Photo < ActiveRecord::Base
-  belongs_to :ablum
+  belongs_to :album
 
   has_attached_file :attachment,
   styles: {
@@ -12,10 +12,10 @@ class Photo < ActiveRecord::Base
   validates_attachment_content_type :attachment, content_type: /\Aimage\/.*\Z/
 
   def next_record
-    Photo.where('id > ?', id).first
+    self.album.photos.where('id > ?', id).first
   end
 
   def prev_record
-    Photo.where('id < ?', id).last
+    self.album.photos.where('id < ?', id).last
   end
 end

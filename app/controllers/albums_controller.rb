@@ -21,6 +21,17 @@ class AlbumsController < ApplicationController
     end
   end
 
+  def set_cover_photo
+    @album = Album.find params[:album_id]
+    photo = @album.photos.find params[:photo_id]
+    unless photo.nil?
+      @album.cover_photo_id = photo.id
+      @album.save
+    end
+
+    redirect_to photo
+  end
+
   protected
 
   def album_params

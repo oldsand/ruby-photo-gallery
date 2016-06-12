@@ -26,6 +26,8 @@ class AlbumsController < ApplicationController
     photo = @album.cover_photo
     respond_to do |format|
       format.html
+      format.jpg { redirect_to @album.cover_photo.attachment.url }
+      format.png { redirect_to @album.cover_photo.attachment.url }
     end
   end
 

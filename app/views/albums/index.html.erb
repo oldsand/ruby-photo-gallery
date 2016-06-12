@@ -8,6 +8,7 @@
       <%= link_to album do %>
       <div>
         <h2><%= album.name %></h2>
+        <p><small><%= public_status(album) %></small></p>
         <%= image_tag album.cover_photo.attachment.url(:thumb) unless album.cover_photo.nil? %>
       </div>
       <% end %>

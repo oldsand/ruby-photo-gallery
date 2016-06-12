@@ -42,6 +42,13 @@ class AlbumsController < ApplicationController
     redirect_to photo
   end
 
+  def toggle_public_status
+    @album = Album.find params[:album_id]
+    @album.is_public = !@album.is_public
+    @album.save
+    redirect_to @album
+  end
+
   protected
 
   def album_params

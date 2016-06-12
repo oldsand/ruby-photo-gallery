@@ -1,4 +1,9 @@
-<h1><%= @album.name %></h1>
+<h1>
+  <%= @album.name %>
+</h1>
+<p>
+  <small><%= public_status(@album) %></small>
+</p>
 
 <%= link_to "New Photo", new_album_photo_path(@album), class: 'button' %>
 
@@ -11,3 +16,11 @@
     </li>
   <% end %>
 </ul>
+
+<div class='control'>
+  <% if @album.is_public? %>
+    <%= link_to 'Set album to private', album_toggle_public_status_path(@album), method: 'put' %>
+  <% else %>
+    <%= link_to 'Set album to public', album_toggle_public_status_path(@album), method: 'put' %>
+  <% end %>
+</div>

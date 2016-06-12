@@ -21,6 +21,14 @@ class AlbumsController < ApplicationController
     end
   end
 
+  def cover_photo
+    @album = Album.find params[:album_id]
+    photo = @album.cover_photo
+    respond_to do |format|
+      format.html
+    end
+  end
+
   def set_cover_photo
     @album = Album.find params[:album_id]
     photo = @album.photos.find params[:photo_id]

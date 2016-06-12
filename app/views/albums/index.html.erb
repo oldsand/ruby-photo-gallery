@@ -6,7 +6,10 @@
   <% @albums.each do |album| %>
     <li>
       <%= link_to album do %>
-        <%= album.name %>
+      <div>
+        <h2><%= album.name %></h2>
+        <%= image_tag album.cover_photo.attachment.url(:thumb) unless album.cover_photo.nil? %>
+      </div>
       <% end %>
     </li>
   <% end %>

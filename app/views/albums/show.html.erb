@@ -1,16 +1,13 @@
 <h1><%= @album.name %></h1>
 
-<div class="content-view">
+<%= link_to "New Photo", new_album_photo_path(@album), class: 'button' %>
 
-  <%= link_to "New Photo", new_album_photo_path(@album), class: 'button' %>
-
-  <ul class='photos-list'>
-    <% @album.photos.each do |photo| %>
-      <li>
-        <%= link_to photo, title:photo.title do %>
-          <%= image_tag photo.attachment.url(:thumb) %>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
-</div>
+<ul class='photos-list'>
+  <% @album.photos.each do |photo| %>
+    <li>
+      <%= link_to photo, title:photo.title do %>
+        <%= image_tag photo.attachment.url(:thumb) %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

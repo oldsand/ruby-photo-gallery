@@ -1,6 +1,8 @@
-<div class="control">
-  <%= link_to 'Set as cover photo', album_set_cover_photo_path(@photo.album, {photo_id: @photo.id}), method:'put' %>
-</div>
+<% if current_user == @photo.user %>
+  <div class="control">
+    <%= link_to 'Set as cover photo', album_set_cover_photo_path(@photo.album, {photo_id: @photo.id}), method:'put' %>
+  </div>
+<% end %>
 
 <div class="photo-view">
   <h1><%= @photo.title %></h1>

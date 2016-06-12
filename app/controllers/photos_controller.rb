@@ -1,8 +1,19 @@
 class PhotosController < ApplicationController
 
+  before_action :authenticate_user!, except: :show
+
   def show
     @photo = Photo.find params[:id]
 
+    has_permission = false
+    if @photo.album.is_public || @photo.album.user == current_user
+      has_permission = true
+    end
+    unless has_permission
+      redirect_to new_user_session_url
+      return
+    end
+    
     render layout: "photo-view"
   end
 

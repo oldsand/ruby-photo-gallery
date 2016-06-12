@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   resources :albums do
     put 'public-status' => 'albums#toggle_public_status', as: :toggle_public_status
     put 'cover-photo' => 'albums#set_cover_photo', as: :set_cover_photo

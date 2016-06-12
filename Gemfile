@@ -26,6 +26,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #For file upload
 #https://github.com/thoughtbot/paperclip
 gem "paperclip"
+
+#https://github.com/plataformatec/devise
+gem 'devise'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

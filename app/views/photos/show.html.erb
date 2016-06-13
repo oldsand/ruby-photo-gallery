@@ -10,7 +10,7 @@
   <figure>
     <%= image_tag @photo.attachment.url(:large) %>
     <figcaption>
-      <%= @photo.title %>
+      <%= @photo.title %>, by <%= @photo.user %>
     </figcaption>
   </figure>
 

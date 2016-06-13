@@ -1,4 +1,8 @@
 <p>
+  You have <%= pluralize @albums.count, 'album' %> in total.
+  You have <%= pluralize current_user.photos.count, 'photo' %> in total.
+</p>
+<p>
   <%= link_to 'New Album', new_album_path, class:"button" %>
 </p>
 

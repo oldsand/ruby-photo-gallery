@@ -9,7 +9,7 @@
 <body>
 
   <header>
-    <%= link_to 'Albums', root_url %>
+    <%= link_to @photo.album.name, @photo.album %>
   </header>
 
     <%= yield %>

@@ -5,4 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :albums
+  has_many :photos, through: :albums
+
+  def to_s
+    email
+  end
 end

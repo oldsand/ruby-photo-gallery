@@ -9,6 +9,9 @@ class Photo < ActiveRecord::Base
     thumb: "300x300#" # = Crop the image
     },
     default_url: "/images/:style/missing.png"
+    url: "/system/:id/:style/:hash/:filename",
+    hash_secret: "longSecretString",
+    hash_data: ":class/:attachment/:id/:style/:updated_at"
 
   validates_attachment_content_type :attachment, content_type: /\Aimage\/.*\Z/
 
